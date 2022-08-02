@@ -1,0 +1,15 @@
+#tube{
+    animation: animName 2s linear infinite;
+}
+
+
+@keyframes animName {
+    0%{
+       transform: rotateX(0deg);
+       transform: rotateY(0deg);
+      }
+   100%{
+       transform: rotateX(360deg);
+       transform: rotateX(360deg);
+      }
+   }

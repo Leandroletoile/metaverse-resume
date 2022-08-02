@@ -3,12 +3,13 @@
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
     <script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
+
+    <link rel="stylesheet" href="style.css">
   </head>
   <body> 
-    
-    <a-scene>
 
-        <a-sound src="https://freesound.org/s/554415/" autoplay="true" position="0 2 5"></a-sound>
+    <a-scene>
+        
       <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
@@ -17,22 +18,68 @@
            material="shader: standard"
            random-color
            snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"></a-mixin>
+
+
       </a-assets>
-    
+
+      <!-- CV IMAGEN -->
+      <a-image rotation="0 40 0"  width="1.2" height="1.2" position="-5 1.7 -0.11" src="./img/cv-leandro.png"></a-image>
+
+
+
       <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
     
       <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1"></a-cylinder>
       
       <a-entity mixin="voxel" position="-1 0 -2"></a-entity>
       <a-entity mixin="voxel" position="0 0 -2"></a-entity>
+
+
+      
+      <!-- CAMERA -->
+      <a-camera position="0 0 1.5" rotation="-1 1 0" scale="1 1 1">
+        <a-cursor raycaster="objects: clickable"></a-cursor>
+      </a-camera>
+
+
+      <!-- <a-entity id="tube"
+      geometry="primitive:cylinder;radius:3;height:100;openEnded:true"
+      material="fog: false; depthWrite: false; src:./img/tube.png;transparent:true;side:back;repeat:1 5"
+      position="0 1.5 -40"
+      rotation="90 0 0"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      bind__discotube="speedX: 50; speedY:50"></a-entity> -->
+
+
+
       <a-entity mixin="voxel" position="0 1 -2">
         <a-animation attribute="rotation" to="0 360 0" repeat="indefinite"></a-animation>
       </a-entity>
-      <a-entity mixin="voxel" position="1 0 -2"></a-entity>
 
-      <a-text position="-0.5 3 -3" value="Hola Mundo!"></a-text>
-      <a-text position="-2 2 -3" value="Bienvenidos al Metaverso de Leandro Letoile"></a-text>
+      <a-entity mixin="voxel" position="1 0 -2"></a-entity>
       
+
+      <a-plane position="0 3 -3" color="black" height="1" width="4"></a-plane>
+      
+      
+      <!-- TITULO HOLA MUNDO -->
+      <a-text width="15" height="15" color="#3ff00e" position="-1.9 3 -3" value="Hola Mundo!"></a-text>
+      <a-text width="10" height="10" color="#d50ef0" position="-4 2 -3" value="Bienvenidos al Metaverso de Leandro Letoile"></a-text>
+      <!-- TITULO HOLA MUNDO -->
+
+      <!-- FORMA ORGANICA CELESTE -->
+      <a-torus-knot position="0 12 -21" color="#61dbfb" arc="180" p="1" q="19" radius="5" radius-tubular="0.1"></a-torus-knot>
+
+
+      <!-- ESFERA ADENTRO DE FORMA -->
+      <a-sphere position="0.1 12 -21" color="#61dbfb" radius="1"></a-sphere>
+
+        <a-entity position="-0.5 1 -10" link="href: ./img/sasa.png; title: My Homepage; image: #homeThumbnail"></a-entity>
+
+
+        <!-- TRIANGULOS 3D -->
+        <a-octahedron  position="15 0 -13" color="red" radius="7"></a-octahedron>
+        <a-octahedron  position="-15 0 -13" color="red" radius="7"></a-octahedron>
     </a-scene>
 
 
